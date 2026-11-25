@@ -1,6 +1,6 @@
 #!/bin/bash
 # usage: runjob.sh <C:\path\script.py>   new project, empty check, paste, run, minimise editor
-E=524998; M=263482
+E=983268; M=459450
 printf "show $E\nsleep 300\nmax $M\nsleep 600\nclick 70,32\nsleep 900\nclick 96,60\nsleep 2500\nwindows\n" > _c.txt
 W=$(./run.sh _c.txt x 2>/dev/null | grep 'CLO Standalone' | grep -v "^$E|\|^$M|")
 if [ -n "$W" ]; then

@@ -3,7 +3,7 @@
 ## Start of session
 1. `schtasks /run /tn "Open CLO"` (interactive, signed-in user). Wait about 40 s.
 2. `windows` shows a `Dialog` (subscription Notice): raise it, tick "Don't show again", click OK.
-3. Edit > Python Script (menu at about (102,24), item (131,224) on a maximised 1920x1080 window). A WELCOME window
+3. Edit > Python Script in ONE gui run (a menu closes between runs): click (110,32), then (132,240) on a maximised 1920x1080 window). A WELCOME window
    also pops up: tick "Don't Show Again" and close it.
 4. `windows` again: the smaller `CLO Standalone OnlineAuth` window is the editor. `front <hwnd>` puts it at
    200,100 at 1400x850, so the editor text sits at (840,360) and Run (the triangle) at (288,148).
@@ -39,4 +39,6 @@
 | GUI task never logs past `start` | `windows` sent while a script runs | don't enumerate during a job |
 | Job "running" 10+ min, CLO CPU flat | modal "Information" dialog | `unstick.sh` / click OK at (961,600) |
 | Only the jacket runs, then QUEUE EMPTY | `queue.txt` missing | check it after copying |
+| Job runs 15+ min, CPU creeping not flat | CLO stuck in a long loop | TIMEOUT, then `recover.sh` |
+| "Autosave Recovery" on screen | CLO was killed last time | click No (1028,600); `recover.sh` does it |
 | Nothing GUI works after reboot | no user signed in | ask the owner to sign in |
