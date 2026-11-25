@@ -62,6 +62,12 @@ Full details and traps: `references/clo-automation.md`. Short list:
 - Check that `queue.txt` really exists after the copy. Without it `build_all.py` only runs the jacket.
 - Turntables from `ExportTurntableImages(8)` are **transparent RGBA, not black**. Composite onto white
   (`round.sh` does this). They land in CLO's temp folder as `output*.png` and get overwritten per job.
+- **A job can hang without a dialog** (07-fret-jacket-r3: no output for 40 min, CLO CPU creeping, not flat, so
+  `unstick.sh` never fired). `dojob2.sh` now gives up after 15 min and prints TIMEOUT. `round.sh` then runs
+  `recover.sh`, which marks the job FAILED, kills CLO, relaunches it, answers **Autosave Recovery** with No
+  (1028,600), reopens the Python Editor and writes the new E/M handles into `runjob.sh`. Up to 3 recoveries a round.
+- **Every CLO kill leaves an "Autosave Recovery" prompt on the next launch.** Always click No. the owner saw this one
+  on the tower screen before the operator did. Never kill CLO without running the full `recover.sh` sequence.
 - Timings: jackets 15-60 s, boots 1-9 min, 20-piece round 32-50 min.
 
 ## Storage
