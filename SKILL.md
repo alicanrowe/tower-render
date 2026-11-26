@@ -19,6 +19,7 @@ GRUB default. Scripts live in `scripts/` here and on the tower in `C:\clo_jobs\`
   nothing that needs the desktop (CLO, TD, the console) can run until the owner signs in. A plain restart lands in
   Windows, not Ubuntu.
 - Renders go here, never on the Mac, and no longer to GarageFarm. Don't touch GarageFarm jobs.
+- Every frame rendered here for a reel, post or page is finished to the studio look guide (design-taste `references/studio-look.md`): grade + unify, tags, fixed logo, the site-card end card. Render clean plates (no baked type) so the finish pass can lay the tags and end card on top.
 - CLO renders use the white mannequin (`Avatar/Mannequin/MV2.1_Mannequin.avt`), never a realistic avatar.
 
 ## Getting files onto the tower
